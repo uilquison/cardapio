@@ -333,35 +333,59 @@
                      <h5 class="modal-title" id="deliveryHoursModalLabel">Horários de Entrega</h5>
                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
                   </div>
-                  <!-- Conteúdo do modal -->
+                  <div class="modal-body">
+                      <p><strong>Segunda a Sexta:</strong> das 11:00 às 23:00</p>
+                      <p><strong>Sábado:</strong> das 12:00 às 22:00</p>
+                      <p><strong>Domingo:</strong> das 12:00 às 20:00</p>
+                  </div>
              </div>
         </div>
     </div>
 
     <!-- Modal Rastrear Pedido -->
     <div class="modal fade" id="orderTrackingModal" tabindex="-1" aria-labelledby="orderTrackingModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-             <div class="modal-content" style="border: 1px solid #343a40; border-radius: 5px; background-color: #343a40; color: #fff;">
-                  <div class="modal-header" style="border-bottom: 1px solid #495057; background-color: #343a40; color: #fff;">
-                     <img src="./imagens/logo.png" alt="Logo" style="width: 40px; margin-right: 10px;">
-                     <h5 class="modal-title" id="orderTrackingModalLabel">Rastrear Pedido</h5>
-                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                  </div>
-                  <!-- Conteúdo do modal -->
-             </div>
-        </div>
+    <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content" style="border: 1px solid #343a40; border-radius: 5px; background-color: #343a40; color: #fff;">
+              <div class="modal-header" style="border-bottom: 1px solid #495057; background-color: #343a40; color: #fff;">
+                 <img src="./imagens/logo.png" alt="Logo" style="width: 40px; margin-right: 10px;">
+                 <h5 class="modal-title" id="orderTrackingModalLabel">Rastrear Pedido</h5>
+                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </div>
+              <div class="modal-body">
+                 <form id="order-tracking-form">
+                     <div class="mb-3">
+                         <label for="order-number" class="form-label">Número do Pedido</label>
+                         <input type="text" class="form-control" id="order-number" placeholder="Digite o número do pedido">
+                     </div>
+                 </form>
+                 <div id="order-status" style="display:none;">
+                     <p>Status do Pedido: <span id="order-status-text"></span></p>
+                 </div>
+              </div>
+              <div class="modal-footer" style="border-top: 1px solid #495057;">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                 <button type="button" class="btn btn-primary" id="track-order-btn">Rastrear</button>
+              </div>
+         </div>
     </div>
+</div>
 
     <!-- Modal Taxas de Entrega -->
     <div class="modal fade" id="deliveryFeeModal" tabindex="-1" aria-labelledby="deliveryFeeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
          <div class="modal-content" style="border: 1px solid #343a40; border-radius: 5px; background-color: #343a40; color: #fff;">
-              <div class="modal-header" style="border-bottom: 1px solid #495057; background-color: #343a40; color: #fff;">
-                 <img src="./imagens/logo.png" alt="Logo" style="width: 40px; margin-right: 10px;">
+              <div class="modal-header" style="border-bottom: 1px solid #495057;">
                  <h5 class="modal-title" id="deliveryFeeModalLabel">Taxas de Entrega</h5>
-                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
               </div>
-              <!-- Conteúdo do modal -->
+              <div class="modal-body">
+                 <p><strong>Para áreas centrais:</strong> R$ 3,50</p>
+                 <p><strong>Para áreas próximas:</strong> R$ 5,00</p>
+                 <p><strong>Acima de R$ 50,00:</strong> Entrega gratuita</p>
+              </div>
+              <div class="modal-footer" style="border-top: 1px solid #495057;">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              </div>
          </div>
     </div>
 </div>

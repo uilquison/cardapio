@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anay Gourmet Hamburgeria</title> <!-- Atualizado para exibir o nome do site -->
+    <!-- Link do Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Removido o padrão de tamanho das imagens de compra -->
+    <!--
+    <style>
+        .card-img-top, .modal-body img {
+            height: 200px;       /* alture padrão */
+            object-fit: cover;   /* garante que a imagem cubra a área sem distorcer */
+            width: 100%;
+        }
+    </style>
+    -->
+</head>
+<body>
+    <!-- Navbar de Serviços de Entrega com Logo -->
+    <nav class="navbar navbar-expand-lg navbar-servicos">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./imagens/logo.png" alt="Logo do Restaurante" style="height:40px;">
+            </a>
+            <span class="navbar-text">
+                🚚 Entregamos em toda a cidade! | 📞 Ligue: (11) 1234-5678
+            </span>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="rastrear-pedido-btn">Rastrear Pedido</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="delivery-hours-btn">Horários de Entrega</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="taxas-de-entrega-btn">Taxas de Entrega</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner com Carrossel -->
+    <div id="bannerCarousel" class="carousel slide banner" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./imagens/istockphoto-1448322070-612x612.jpg" class="d-block w-100" alt="Imagem 1">
+            </div>
+            <div class="carousel-item">
+                <img src="./imagens/capitao-barba-negra-hamburguer.jpg" class="d-block w-100" alt="Imagem 2">
+            </div>
+            <div class="carousel-item">
+                <img src="./imagens/istockphoto-1448322070-612x612.jpg" class="d-block w-100" alt="Imagem 3">
+            </div>
+        </div>
+        <div class="logo-container">
+            <img src="./imagens/logo.png" alt="Logo do Restaurante" class="logo">
+            <h1 class="text-light text-center">Anay Gourmet Hamburgeria</h1>
+        </div>
+    </div>
+
+    <!-- Navbar de Seleção -->
+    <div class="container my-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#foodNavbar" aria-controls="foodNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="foodNavbar">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#hamburgers">Hambúrgueres</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#drinks">Bebidas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#desserts">Sobremesas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#combos">Combos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Nosso Cardápio</h2>
+        <div class="row">
+            <!-- Item 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./imagens/2 fast bacon.jpg" class="card-img-top" alt="Hambúrguer Clássico">
+                    <div class="card-body">
+                        <h5 class="card-title">2 Fast Bacon</h5>
+                        <p class="card-text">Tentação na sua timeline!</p>
+                        <p class="card-text"><strong>R$ 47,50</strong></p>
+                        <button class="btn btn-primary w-100 add-to-cart" data-name="2 Fast Bacon" data-price="47.50">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./imagens/salada egg+duplo bacon.jpg" class="card-img-top" alt="Hambúrguer Gourmet">
+                    <div class="card-body">
+                        <h5 class="card-title">Salada Egg + Duplo Bacon</h5>
+                        <p class="card-text">Feito com amor!</p>
+                        <p class="card-text"><strong>R$ 48,00</strong></p>
+                        <button class="btn btn-primary w-100 add-to-cart" data-name="Salada Egg + Duplo Bacon" data-price="48.00">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./imagens/smash triplo burger.jpg" class="card-img-top" alt="Hambúrguer Vegano">
+                    <div class="card-body">
+                        <h5 class="card-title">Smash Triplo Burger</h5>
+                        <p class="card-text">Felicidade de especial a verdadeiro!</p>
+                        <p class="card-text"><strong>R$ 26,00</strong></p>
+                        <button class="btn btn-primary w-100 add-to-cart" data-name="Smash Triplo Burger" data-price="26.00">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="drinks" class="container my-5">
+        <h2 class="text-center mb-4">Bebidas</h2>
+        <div class="row">
+            <!-- Bebida 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./imagens/coca.jpg" class="card-img-top" alt="Refrigerante">
+                    <div class="card-body">
+                        <h5 class="card-title">Coca-cola</h5>
+                        <p class="card-text">Refrescante e gelado!</p>
+                        <p class="card-text"><strong>R$ 5,00</strong></p>
+                        <button class="btn btn-primary w-100 add-to-cart" data-name="Refrigerante" data-price="5.00">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Bebida 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./imagens/sucos.jpg" class="card-img-top" alt="Suco Natural">
+                    <div class="card-body">
+                        <h5 class="card-title">caipirinha</h5>
+                        <p class="card-text">Fresco e delicioso!</p>
+                        <p class="card-text"><strong>R$ 8,00</strong></p>
+                        <button class="btn btn-primary w-100 add-to-cart" data-name="Suco Natural" data-price="8.00">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Bebida 3 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./imagens/milkshake.jpg" class="card-img-top" alt="Café">
+                    <div class="card-body">
+                        <h5 class="card-title">milkshake</h5>
+                        <p class="card-text">Adocando seu dia!</p>
+                        <p class="card-text"><strong>R$ 4,00</strong></p>
+                        <button class="btn btn-primary w-100 add-to-cart" data-name="Café" data-price="4.00">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Promoções Especiais (Novidades) -->
+    <div id="special" class="container my-5">
+        <h2 class="text-center mb-4" style="color:#FF4500; font-weight:bold; text-shadow: 1px 1px #000;">NOVIDADES</h2>
+        <div class="row">
+            <!-- Card da Promoção -->
+            <div class="col-md-6">
+                <div class="card" style="border: 2px solid #FF4500; box-shadow: 0 5px 15px rgba(255,69,0,0.5); background: linear-gradient(135deg, #ff7e5f, #feb47b);">
+                    <img src="./imagens/lanche de tilapia.jpg" class="card-img-top" alt="Promoção Especial" style="border-bottom: 2px solid #FF4500;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" style="font-size:1.3rem; font-weight:bold;">Lanche de tilapia</h5>
+                        <p class="card-text" style="font-size:1rem;">Aproveite essa novidade imperdivel!</p>
+                        <p class="card-text h5" style="color: #FFD700; font-size:1.1rem;">Por apenas R$ 35,90</p>
+                        <button class="btn btn-dark w-100 add-to-cart" data-name="Lanche de tilapia" data-price="35.90">
+                            Comprar Agora
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Imagem Adicional da Promoção -->
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <img src="./imagens/novidade.jpg" alt="Promoção Lateral 1" class="img-fluid" style="border-radius: 5px; max-width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Exclua ou comente esta seção -->
+    <div id="cart" class="container my-5">
+        <!-- Conteúdo do carrinho de compras e botão de finalizar pedido -->
+    </div>
+
+    <!-- Carrinho de Compras Fixo (Canto Superior Direito) com dropdown -->
+    <div id="fixed-cart" class="dropdown" style="position: fixed; top: 100px; right: 20px; z-index: 900;">
+        <button class="btn btn-success dropdown-toggle" type="button" id="cartDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Carrinho (<span id="fixed-cart-count">0</span>)
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="cartDropdown" style="min-width: 300px;">
+            <li>
+                <ul id="offcanvas-cart-items" class="list-group mb-3">
+                    <!-- Itens do carrinho serão inseridos aqui -->
+                </ul>
+                <h6 id="offcanvas-cart-total">Total: R$ 0,00</h6>
+                <!-- Botão para finalizar a compra -->
+                <button id="checkout-button" class="btn btn-primary w-100 mt-3">Finalizar Compra</button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Offcanvas do Carrinho de Compras -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+        <div class="offcanvas-header" style="background-color: #343a40; color: #fff;">
+            <h5 id="offcanvasCartLabel">Seu Carrinho</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+        </div>
+        <div class="offcanvas-body" style="background-color: #343a40; color: #fff;">
+            <ul id="offcanvas-cart-items" class="list-group mb-3">
+                <!-- Itens do carrinho serão inseridos aqui -->
+            </ul>
+            <h6 id="offcanvas-cart-total">Total: R$ 0,00</h6>
+            <!-- Botão para finalizar a compra -->
+            <button id="checkout-button" class="btn btn-primary w-100 mt-3">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal com cores do site -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border: 1px solid #343a40; border-radius: 5px; background-color: #343a40; color: #fff;">
+               <div class="modal-header" style="border-bottom: 1px solid #495057;">
+                 <h5 class="modal-title" id="checkoutModalLabel">Finalize sua Compra</h5>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+               </div>
+               <div class="modal-body">
+                 <form id="checkout-form">
+                   <div class="mb-3">
+                     <label for="customer-name" class="form-label">Nome Completo</label>
+                     <input type="text" class="form-control" id="customer-name" placeholder="Digite seu nome completo">
+                   </div>
+                   <div class="mb-3">
+                     <label for="customer-cpf" class="form-label">CPF</label>
+                     <input type="text" class="form-control" id="customer-cpf" placeholder="Digite seu CPF">
+                   </div>
+                   <div class="mb-3">
+                     <label for="customer-address" class="form-label">Endereço</label>
+                     <textarea class="form-control" id="customer-address" rows="3" placeholder="Digite seu endereço"></textarea>
+                   </div>
+                 </form>
+               </div>
+               <div class="modal-footer" style="border-top: 1px solid #495057;">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                 <button type="button" class="btn btn-primary" id="confirm-checkout">Confirmar Compra</button>
+               </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Propaganda Modal - Versão Chamativa -->
+    <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border: 2px solid #FF4500; border-radius: 5px; background: linear-gradient(135deg, #ff7e5f, #feb47b); color: #fff; box-shadow: 0 0 20px rgba(255, 69, 0, 0.7);">
+                <div class="modal-header" style="border-bottom: 1px solid #fff;">
+                    <h5 class="modal-title" id="promoModalLabel" style="font-size: 1.5rem; font-weight: bold;">Promoção Imperdível!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="./imagens/lanche de tilapia.jpg" alt="Promoção" class="img-fluid mb-3" style="border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+                    <p style="font-size: 1.2rem;">Aproveite nossas ofertas incríveis e receba um desconto especial na sua primeira compra!</p>
+                    <p class="h5" style="color: #FFD700; font-size: 1.3rem;">Preço Especial: R$ 35,90</p>
+                </div>
+                <div class="modal-footer" style="border-top: 1px solid #fff;">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fechar</button>
+                    <!-- Botão "Comprar Agora" com atributos de produto -->
+                    <button type="button" class="btn btn-dark" id="buy-now" data-name="Promoção Especial!" data-price="35.90">
+                        Comprar Agora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- News Modal - Versão Chamativa -->
+    <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+             <div class="modal-content" style="border: 2px solid #fbff00; border-radius: 5px; background: linear-gradient(135deg, #00BFFF, #1E90FF); color: #fff; box-shadow: 0 0 20px rgba(0, 191, 255, 0.7);">
+                  <div class="modal-header" style="border-bottom: 1px solid #fbff00;">
+                        <h5 class="modal-title" id="newsModalLabel" style="font-size: 1.5rem; font-weight: bold;">Últimas Notícias</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                  </div>
+                  <div class="modal-body">
+                        <img src="./imagens/dia do.jpg" alt="Notícias" class="img-fluid mb-3" style="border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+                        <p style="font-size: 1.2rem;">Confira as últimas novidades: Hoje é dia do cliente! Aproveite ofertas imperdíveis e promoções exclusivas somente para você!</p>
+                  </div>
+                  <div class="modal-footer" style="border-top: 1px solid #fff;">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fechar</button>
+                  </div>
+             </div>
+        </div>
+    </div>
+
+    <!-- Modal Horários de Entrega com as cores do site -->
+    <div class="modal fade" id="deliveryHoursModal" tabindex="-1" aria-labelledby="deliveryHoursModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+             <div class="modal-content" style="border: 1px solid #343a40; border-radius: 5px; background-color: #343a40; color: #fff;">
+                  <div class="modal-header" style="border-bottom: 1px solid #495057;">
+                     <h5 class="modal-title" id="deliveryHoursModalLabel">Horários de Entrega</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                  </div>
+                  <div class="modal-body">
+                     <p><strong>Segunda a Sexta:</strong> das 11:00 às 23:00</p>
+                     <p><strong>Sábado:</strong> das 12:00 às 22:00</p>
+                     <p><strong>Domingo:</strong> das 12:00 às 20:00</p>
+                  </div>
+                  <div class="modal-footer" style="border-top: 1px solid #495057;">
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  </div>
+             </div>
+        </div>
+    </div>
+
+    <!-- Modal Rastrear Pedido -->
+    <div class="modal fade" id="orderTrackingModal" tabindex="-1" aria-labelledby="orderTrackingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+             <div class="modal-content" style="border: 1px solid #343a40; border-radius: 5px; background-color: #343a40; color: #fff;">
+                  <div class="modal-header" style="border-bottom: 1px solid #495057;">
+                     <h5 class="modal-title" id="orderTrackingModalLabel">Rastrear Pedido</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                  </div>
+                  <div class="modal-body">
+                     <form id="order-tracking-form">
+                         <div class="mb-3">
+                             <label for="order-number" class="form-label">Número do Pedido</label>
+                             <input type="text" class="form-control" id="order-number" placeholder="Digite o número do pedido">
+                         </div>
+                     </form>
+                     <div id="order-status" style="display:none;">
+                         <p>Status do Pedido: <span id="order-status-text"></span></p>
+                     </div>
+                  </div>
+                  <div class="modal-footer" style="border-top: 1px solid #495057;">
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                     <button type="button" class="btn btn-primary" id="track-order-btn">Rastrear</button>
+                  </div>
+             </div>
+        </div>
+    </div>
+
+    <!-- Modal Taxas de Entrega -->
+    <div class="modal fade" id="deliveryFeeModal" tabindex="-1" aria-labelledby="deliveryFeeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+             <div class="modal-content" style="border: 1px solid #343a40; border-radius: 5px; background-color: #343a40; color: #fff;">
+                  <div class="modal-header" style="border-bottom: 1px solid #495057;">
+                     <h5 class="modal-title" id="deliveryFeeModalLabel">Taxas de Entrega</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                  </div>
+                  <div class="modal-body">
+                     <p><strong>Para áreas centrais:</strong> R$ 3,50</p>
+                     <p><strong>Para áreas próximas:</strong> R$ 5,00</p>
+                     <p><strong>Acima de R$ 50,00:</strong> Entrega gratuita</p>
+                  </div>
+                  <div class="modal-footer" style="border-top: 1px solid #495057;">
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  </div>
+             </div>
+        </div>
+    </div>
+
+    <!-- Link do Bootstrap JS e Script do Carrinho -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+    // Exibe a propaganda ao carregar a página
+    document.addEventListener('DOMContentLoaded', function () {
+        var promoModal = new bootstrap.Modal(document.getElementById('promoModal'));
+        promoModal.show();
+
+        // Adiciona o produto ao carrinho ao clicar no botão "Comprar Agora"
+        document.getElementById('buy-now').addEventListener('click', function() {
+            var name = this.getAttribute('data-name');
+            var price = parseFloat(this.getAttribute('data-price'));
+            // Função addToCart deve estar implementada em script.js para adicionar o item no carrinho
+            if(typeof addToCart === 'function') {
+                addToCart(name, price);
+            }
+            // Fecha o modal após a compra
+            promoModal.hide();
+        });
+
+        // Ao fechar o modal de propaganda, exibe o modal de notícias
+        var promoModalEl = document.getElementById('promoModal');
+        promoModalEl.addEventListener('hidden.bs.modal', function () {
+            var newsModal = new bootstrap.Modal(document.getElementById('newsModal'));
+            newsModal.show();
+        });
+    });
+
+    // Ao clicar no botão "Finalizar Compras", exibe o modal de checkout
+    document.getElementById('checkout-button').addEventListener('click', function() {
+        var checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+        checkoutModal.show();
+    });
+
+    // Processa os dados do checkout
+    document.getElementById('confirm-checkout').addEventListener('click', function() {
+        var name = document.getElementById('customer-name').value;
+        var cpf = document.getElementById('customer-cpf').value;
+        var address = document.getElementById('customer-address').value;
+        console.log("Checkout confirmado:", name, cpf, address);
+        // Aqui você pode implementar o processamento do checkout, como envio para o servidor
+
+        // Fecha o modal de checkout após confirmar
+        var checkoutModal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));
+        checkoutModal.hide();
+        
+        // Redireciona para o WhatsApp passando dados pré-definidos na URL
+        // Altere "SEUNUMERO" para seu número de WhatsApp (incluindo o código do país, sem espaços ou caracteres especiais)
+        // EncodeURIComponent é utilizado para codificar a mensagem
+        var whatsappNumber = "SEUNUMERO";
+        var message = "Olá " + name + ", sua compra foi confirmada! Aguarde nosso contato.";
+        window.location.href = "https://api.whatsapp.com/send?phone=" + whatsappNumber + "&text=" + encodeURIComponent(message);
+    });
+
+    document.getElementById('delivery-hours-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        var deliveryModal = new bootstrap.Modal(document.getElementById('deliveryHoursModal'));
+        deliveryModal.show();
+    });
+
+    document.getElementById('rastrear-pedido-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        var orderTrackingModal = new bootstrap.Modal(document.getElementById('orderTrackingModal'));
+        orderTrackingModal.show();
+    });
+
+    document.getElementById('track-order-btn').addEventListener('click', function() {
+        var orderNumber = document.getElementById('order-number').value;
+        if(orderNumber) {
+            // Exemplo de processamento: exibe o status do pedido em um alerta.
+            // Aqui você pode fazer uma requisição para seu servidor ou redirecionar para uma página de status.
+            document.getElementById('order-status-text').innerText = "Em processamento";
+            document.getElementById('order-status').style.display = 'block';
+        }
+    });
+
+    document.getElementById('taxas-de-entrega-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        var feeModal = new bootstrap.Modal(document.getElementById('deliveryFeeModal'));
+        feeModal.show();
+    });
+    </script>
+</body>
+</html>

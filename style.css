@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: 'Caveat', cursive; /* Fonte de giz */
+    background-color: #121212; /* Fundo escuro */
+    color: #ffffff; /* Texto claro */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./imagens/logo.png') no-repeat center center;
+    background-size: 600px; /* marca d´água maior */
+    opacity: 0.1; /* ajuste a opacidade conforme necessário */
+    z-index: -1;
+}
+
+.banner {
+    background-color: #1f1f1f; /* Cor de fundo do banner */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ffcc00; /* Linha decorativa */
+    position: relative;
+    height: 400px; /* Altura do banner */
+    overflow: hidden;
+}
+
+.carousel-inner img {
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
+}
+
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+}
+
+.logo {
+    max-width: 300px; /* Aumenta a largura máxima da logo */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+h1, h2, h3, h4, h5, h6, p, a, .card-title, .card-text {
+    font-family: 'Caveat', cursive; /* Aplica a fonte de giz */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Efeito de sombra para parecer giz */
+}
+
+h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Efeito de sombra */
+}
+
+.navbar .nav-link {
+    color: #ffffff; /* Cor dos links */
+    font-family: 'Caveat', cursive; /* Fonte de giz */
+    font-size: 1.2rem;
+}
+
+.navbar .nav-link:hover {
+    color: #ffcc00; /* Cor ao passar o mouse */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Destaque ao passar o mouse */
+}
+
+.navbar-servicos {
+    background-color: #ffcc00; /* Cor personalizada */
+    color: #000000; /* Cor do texto */
+}
+
+.navbar-servicos .nav-link {
+    color: #000000; /* Cor dos links */
+}
+
+.navbar-servicos .nav-link:hover {
+    color: #ffffff; /* Cor ao passar o mouse */
+}
+
+.card {
+    background-color: #1f1f1f; /* Fundo dos cards */
+    color: #ffffff; /* Texto claro */
+    border: 1px solid #ffcc00; /* Borda decorativa */
+}
+
+.card-title {
+    color: #ffcc00; /* Cor do título do card */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Efeito de giz */
+}
+
+.card-text {
+    color: #ffffff; /* Cor do texto do card */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Efeito de giz */
+}
+
+/* Estiliza o botão do carrinho fixo */
+#fixed-cart button {
+    background: linear-gradient(45deg, #ffcc00, #ffaa00);
+    border: none;
+    border-radius: 30px;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#fixed-cart button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.4);
+}
